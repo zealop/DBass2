@@ -3,9 +3,13 @@
 	if (!$connect) {
 		die("Connection failed: " . mysqli_connect_error());
 	}
- 
-	$id2 = $_POST['id1'];
-	$sql = "DELETE FROM cars WHERE id='$id2'";
+	
+	$_POST = json_decode(file_get_contents('php://input'), true);
+	$id = $_POST['id'];
+	$name = $_POST['name'];
+	$year = $_POST['year'];
+	
+	$sql = "DELETE FROM cars WHERE id='$id'";
 	if (mysqli_query($connect, $sql)) {
 		 echo "Record deleted";
 	} else {
