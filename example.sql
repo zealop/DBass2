@@ -1,18 +1,35 @@
-CREATE DATABASE `examples`;
-USE `examples`;
-CREATE TABLE `cars` (
-   `id` int UNIQUE NOT NULL,
-   `name` varchar(40),
-   `year` varchar(50),
-   PRIMARY KEY(id)
+DROP DATABASE examples;
+CREATE DATABASE examples;
+USE examples;
+CREATE TABLE IF NOT EXISTS Product (
+	ProductID int(12) NOT NULL AUTO_INCREMENT,
+	ProductName varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+	ProductPrice int(12) COLLATE utf8_unicode_ci NOT NULL,
+	ProductDesc text COLLATE utf8_unicode_ci NOT NULL,
+	ProductImage varchar(100) DEFAULT NULL,
+	ProductStock int(12) DEFAULT NULL,
+	PRIMARY KEY (ProductID)
 );
-INSERT INTO cars VALUES(1,'Mercedes','2000');
-INSERT INTO cars VALUES(2,'BMW','2004');
-INSERT INTO cars VALUES(3,'Audi','2001');
 
-CREATE TABLE Products (
-	ProductID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,    
-	ProductName   VARCHAR(255) NOT NULL DEFAULT '', 
-	CategoryID INT FOREIGN KEY REFERENCES Category(CategoryID), 
-	SupplierID INT FOREIGN KEY REFERENCES Supplier(SupplierID)
+CREATE TABLE IF NOT EXISTS Category (
+	CategoryID int(12) NOT NULL AUTO_INCREMENT,
+	CategoryName varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+	CategoryDesc varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
+	CategoryImage varchar(100) DEFAULT NULL,
+	ParentCategory int(12) DEFAULT NULL, 
+	PRIMARY KEY(CategoryID),
+	FOREIGN KEY(ParentCategory) REFERENCES Category(CategoryID)
 );
+
+CREATE TABLE IF NOT EXISTS ProductCategory(
+	ProductID int(12) NOT NULL, 
+	CategoryID int(12) NOT NULL, 
+	FOREIGN KEY(ProductID) REFERENCES Product(ProductID),
+	FOREIGN KEY(CategoryID) REFERENCES Category(CategoryID)
+);
+
+CREATE TRIGGER `clean_procatmapping` BEFORE DELETE ON `product` FOR EACH ROW
+DELETE FROM
+  productcategory
+WHERE
+  ProductID = OLD.ProductID
