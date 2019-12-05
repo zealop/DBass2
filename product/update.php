@@ -1,20 +1,12 @@
 <?php
-	$connect = mysqli_connect("localhost", "root", "", "examples");
-	if (!$connect) {
-		die("Connection failed: " . mysqli_connect_error());
-	}
- 
-	mysqli_set_charset($connect,"utf8");
-	header('Content-Type: application/json; charset=utf-8');
+	REQUIRE '../php/utils.php';
 	
-	$_POST = json_decode(file_get_contents('php://input'), true);
-	
-	$id = $_POST['id'];
-	$name = $_POST['name'];
-	$price = $_POST['price'];
-	$stock= $_POST['stock'];
-	$desc = $_POST['desc'];
-	$img = $_POST['img'];
+	$id = $_POST['ID'];
+	$name = $_POST['Name'];
+	$price = $_POST['Price'];
+	$stock= $_POST['Stock'];
+	$desc = $_POST['Description'];
+	$img = $_POST['Image'];
 	
 	/*
 	if (empty($name)) {

@@ -11,12 +11,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
-    <!-- datatable -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
-    <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <!-- personal -->
-    <script src="/DBass2/js/myscript.js"></script>
+    <script src="/DBass2/js/style.js"></script>
 	<link rel="stylesheet" href="/DBass2/css/mycss.css">
 </head>
 
@@ -63,7 +59,7 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Product</a>
+                  <a href="./product/">Product</a>
                 </li>
                 <li>
                   <a href="#">Category</a>
@@ -184,36 +180,30 @@
   <main class="page-content">
     <div class="container">
             <h1>DBass2</h1>
-            <form method="post" action="">
-                <table class="table table-bordered data-table">
-                    <thead>
-                        <th width="10%">ID</th>
-                        <th width="auto">Name</th>
-                        <th width="10%">Year</th>
-                    </thead>
-                    <tbody>
-                        <td>
-                            <input type="text" name="id" id="id" class="form-control" value="4" required="">
-                        </td>
-                        <td>
-                            <input type="text" name="name" id="name" class="form-control" value="Mercedes" required="">
-                        </td>
-                        <td>
-                            <input type="text" name="year" id="year" class="form-control" value="1990" required="">
-                        </td>
-                    </tbody>
-                </table>
-                <button type="submit" class="btn btn-success save-btn" name="add">Add</button>
-            </form>
-
-            <table class="table table-bordered data-table" id="mytable">
-                <thead>
-                    <th width="1%">ID</th>
-                    <th width="auto">Name</th>
-                    <th width="1%">Year</th>
-                    <th width="20%">Action</th>
+            
+            <table class="table table-bordered data-table table-striped" id="mytable">
+                <thead class='thead-dark'>
+                    <th>Tên</th>
+                    <th>MSSV</th>
                 </thead>
-                <tbody id="mytbody"></tbody>
+                <tbody>
+					<tr>
+						<td>Trần Minh Phong</td>
+						<td>1710233</td>
+					</tr>
+					<tr>
+						<td>Thái Tiểu Phương</td>
+						<td>1710250</td>
+					</tr>
+					<tr>
+						<td>Phạm Văn Quốc</td>
+						<td>1712857</td>
+					</tr>
+					<tr>
+						<td>Nguyễn Lục Sâm Bảo</td>
+						<td>17</td>
+					</tr>
+				</tbody>
             </table>
         </div>
 

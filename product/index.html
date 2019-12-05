@@ -63,7 +63,7 @@
             <div class="sidebar-submenu">
               <ul>
                 <li>
-                  <a href="#">Product</a>
+                  <a href="./product/">Product</a>
                 </li>
                 <li>
                   <a href="#">Category</a>
@@ -185,8 +185,8 @@
     <div class="container-fluid">
             <h1>DBass2</h1>
             <form method="post" action="">
-                <table class="table table-bordered data-table">
-                    <thead>
+                <table class="table table-bordered data-table table-striped">
+                    <thead class="thead-dark">
                         <th width="10%">ID</th>
 						<th width="20%">Name</th>
 						<th width="10%">Price</th>
@@ -196,30 +196,30 @@
                     </thead>
                     <tbody>
                         <td>
-                            <input type="number" name="id" id="id" class="form-control" required="">
+                            <input type="number" name="ID" id="id" class="form-control" required="">
                         </td>
                         <td>
-                            <input type="text" name="name" id="name" class="form-control" required="">
+                            <input type="text" name="Name" id="name" class="form-control" required="">
                         </td>
                         <td>
-                            <input type="number" name="price" id="price" class="form-control" required="">
+                            <input type="number" name="Price" id="price" class="form-control" required="">
                         </td>
 						<td>
-                            <input type="number" name="stock" id="stock" class="form-control" required="">
+                            <input type="number" name="Stock" id="stock" class="form-control" required="">
                         </td>
 						<td>
-                            <input type="text" name="desc" id="desc" class="form-control" required="">
+                            <input type="text" name="Description" id="desc" class="form-control" required="">
                         </td>
 						<td>
-                            <input type="text" name="img" id="img" class="form-control">
+                            <input type="text" name="Image" id="img" class="form-control">
                         </td>
                     </tbody>
                 </table>
                 <button type="submit" class="btn btn-success save-btn" name="add">Add</button>
             </form>
 
-            <table class="table table-bordered data-table" id="mytable">
-                <thead>
+            <table class="table table-bordered data-table table-striped" id="mytable">
+                <thead class="thead-dark">
                     <th width="10%">ID</th>
                     <th width="20%">Name</th>
                     <th width="10%">Price</th>

@@ -1,16 +1,8 @@
 <?php
 
-
-	$connect = mysqli_connect("localhost", "root", "", "examples");
-	if (!$connect) {
-		die("Connection failed: " . mysqli_connect_error());
-	}
+	REQUIRE '../php/utils.php';
 	
-	//unicode
-	mysqli_set_charset($connect,"utf8");
-	header('Content-Type: application/json; charset=utf-8');
-	
-	$sql = "SELECT * FROM product";;
+	$sql = "SELECT * FROM product";
     $result = mysqli_query($connect, $sql);
     $rows = array();
     if (mysqli_num_rows($result) > 0){
