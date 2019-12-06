@@ -3,12 +3,10 @@
 	
 	$id = $_POST['ID'];
 	$name = $_POST['Name'];
-	$price = $_POST['Price'];
-	$stock= $_POST['Stock'];
-	$desc = $_POST['Description'];
 	$img = $_POST['Image'];
+	$parent = $_POST['Parent'];
 	
-	/*
+	/*input checking
 	if (empty($name)) {
 		echo "Name required";
 		goto finish;
@@ -29,8 +27,8 @@
 	}
 	*/
 	mysqli_query($connect, "SET FOREIGN_KEY_CHECKS =0");
-	$sql = "UPDATE product SET productname='$name', productprice='$price',
-	productstock='$stock', productdesc='$desc', productimage='$img' WHERE productid='$id'";
+	$sql = "UPDATE category SET categoryname='$name', categoryimage='$img',
+parentcategory = '$parent' WHERE categoryid='$id'";
 	if (mysqli_query($connect, $sql)) {
 		echo "Record updated";
 	} 

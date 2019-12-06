@@ -2,13 +2,10 @@
 	REQUIRE '../php/utils.php';
 	
 	$id = $_POST['ID'];
-	$name = $_POST['Name'];
-	$price = $_POST['Price'];
-	$stock= $_POST['Stock'];
-	$desc = $_POST['Description'];
-	$img = $_POST['Image'];
+	$proid = $_POST['ProductID'];
+	$catid = $_POST['CategoryID'];
 	
-	/*
+	/*input checking
 	if (empty($name)) {
 		echo "Name required";
 		goto finish;
@@ -28,9 +25,9 @@
 		goto finish;
 	}
 	*/
-	mysqli_query($connect, "SET FOREIGN_KEY_CHECKS =0");
-	$sql = "UPDATE product SET productname='$name', productprice='$price',
-	productstock='$stock', productdesc='$desc', productimage='$img' WHERE productid='$id'";
+	//mysqli_query($connect, "SET FOREIGN_KEY_CHECKS =0");
+	$sql = "UPDATE productcategory SET productid='$proid', categoryid='$catid'
+	WHERE procatid='$id'";
 	if (mysqli_query($connect, $sql)) {
 		echo "Record updated";
 	} 

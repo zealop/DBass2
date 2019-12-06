@@ -70,8 +70,12 @@ $(document).ready(function() {
 					temp+="</td><td><button class='btn btn-info btn-xs btn-edit'>Edit</button><button class='btn btn-danger btn-xs btn-delete'>Delete</button></td></tr>";
                     $("#mytbody").prepend(temp);
                     $("input").val('');
-                } 
-                alert(response);
+                }
+				alert(response);
+				if($("#mytbody").find('tr:first').find('td:first').html() == 'undefined'){	
+					location.reload(true);
+				}
+                
             },
             error: function(response) {
                 console.log(response);
@@ -115,7 +119,9 @@ $(document).ready(function() {
 		
 		$(this).parents("tr").find("td").not(':last').each(function(cellIndex) {
 			tmp[cellIndex]= $(this).html();
-			$(this).attr('contenteditable', 'true');	
+			var headers = $(this).parents("table").find("th");
+			if($(headers[cellIndex]).html()!= 'ID')
+				$(this).attr('contenteditable', 'true');	
 		});    
 		
         $(this).parents("tr").find('td:last').prepend("<button class='btn btn-info btn-xs btn-update'>Update</button><button class='btn btn-warning btn-xs btn-cancel'>Cancel</button>")

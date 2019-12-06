@@ -2,67 +2,67 @@ USE `examples`;
 INSERT INTO Category VALUES(
 	10000000,
 	'Linh kiện máy tính',
-	NULL, NULL,
+	NULL,
 	NULL);
 	
 INSERT INTO Category VALUES(
 	11000000,
 	'Card màn hình',
-	NULL, NULL,
+	NULL,
 	10000000);
 	
 INSERT INTO Category VALUES(
 	11100000,
 	'NVIDIA',
-	NULL, NULL,
+	NULL,
 	11000000);
 	
 INSERT INTO Category VALUES(
 	11110000,
 	'RTX',
-	NULL, NULL,
+	NULL,
 	11100000);
 	
 INSERT INTO Category VALUES(
 	11120000,
 	'GTX',
-	NULL, NULL,
+	NULL,
 	11100000);
 	
 INSERT INTO Category VALUES(
 	12000000,
 	'Mainboard',
-	NULL, NULL,
+	NULL,
 	10000000);	
 	
 INSERT INTO Category VALUES(
 	12100000,
 	'Intel',
-	NULL, NULL,
+	NULL,
 	12000000);	
 	
 INSERT INTO Category VALUES(
 	12110000,
 	'LGA 1152',
-	NULL, NULL,
+	NULL,
 	12100000);	
 	
 INSERT INTO Category VALUES(
 	13000000,
 	'Tản nhiệt',
-	NULL, NULL,
+	NULL,
 	10000000);
 	
 INSERT INTO Category VALUES(
 	13100000,
 	'Tản nhiệt nước',
-	NULL, NULL,
+	NULL,
 	13000000);
 	
 INSERT INTO Category VALUES(
 	14000000,
 	'Thùng máy',
-	NULL, NULL,
+	NULL,
 	10000000);
 
 INSERT INTO Product VALUES(
@@ -74,7 +74,7 @@ INSERT INTO Product VALUES(
 	- GPU clock OC Mode - GPU Boost Clock : 1830 MHz , GPU Base Clock : 1515 MHz Gaming Mode (Default) - GPU Boost Clock : 1800 MHz , GPU Base Clock : 1515 MHz
 	- Nguồn phụ: 1 x 6-pin + 1 x 8-pi',
 	NULL, 6);
-INSERT INTO ProductCategory VALUES(19040596, 11110000);
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040596, 11110000);
 
 INSERT INTO Product VALUES(
 	19040602,
@@ -85,7 +85,7 @@ INSERT INTO Product VALUES(
 	- GPU clock Chế độ OC - Xung Tăng cường GPU : 1800 MHZ , Xung Nền GPU : 1530 MHz Chế độ Chơi Game - Xung Tăng cường GPU : 1770 MHZ , Xung Nền GPU : 1500 MHz
 	- Nguồn phụ: 1 x 8-pin',
 	NULL, 12);
-INSERT INTO ProductCategory VALUES(19040602, 11120000);	
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040602, 11120000);	
 	
 INSERT INTO Product VALUES(
 	19040610,
@@ -96,7 +96,7 @@ INSERT INTO Product VALUES(
 	- GPU clock Chế độ OC - Xung Tăng cường GPU : 1800 MHZ , Xung Nền GPU : 1530 MHz Chế độ Chơi Game - Xung Tăng cường GPU : 1770 MHZ , Xung Nền GPU : 1500 MHz
 	- Nguồn phụ: 1 x 8-pin',
 	NULL, 22);
-INSERT INTO ProductCategory VALUES(19040610, 11120000);	
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040610, 11120000);	
 	
 INSERT INTO Product VALUES(
 	19040961,
@@ -108,7 +108,7 @@ INSERT INTO Product VALUES(
 	- Cổng cắm lưu trữ: 1 x M.2 SATA; 1 x M.2 SATA/NVMe; 6 x SATA 3 6Gb/s
 	- Cổng xuất hình: 1 x VGA/D-sub',
 	NULL, 11);
-INSERT INTO ProductCategory VALUES(19040961, 12110000);		
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040961, 12110000);		
 
 INSERT INTO Product VALUES(
 	19041006,
@@ -116,7 +116,7 @@ INSERT INTO Product VALUES(
 	7490000,
 	'- OLED màu 1,77” để hiển thị dữ liệu thống kê hệ thống theo thời gian thực và hình ảnh hoặc hoạt ảnh cá nhân hóa - Quạt mini tích hợp giúp làm mát khu vưc VRM và M.2 lên tới 20°C - 3 quạt tản nhiệt Noctua iPPC 2000 PWM 120mm - Trung tâm điều khiển một chạm LiveDash đối với đèn và màn hình OLED - LED RGB và vỏ bơm mạ NCVM làm nổi bật vẻ đẹp, hiện đại - Được thiết kế tinh tế để bổ sung cho bo mạch chủ ROG tại tầng trung tâm giàn máy của bạn - Ống dẫn được bọc ngoài, gia cường để tăng thêm độ bền',
 	NULL, 5);
-INSERT INTO ProductCategory VALUES(19041006, 14000000);		
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19041006, 14000000);		
 
 INSERT INTO Product VALUES(
 	19060270,
@@ -128,7 +128,7 @@ INSERT INTO Product VALUES(
 	- Cổng cắm lưu trữ: 1 x M.2 SATA/NVMe; 4 x SATA 3 6Gb/s; Hỗ trợ Intel Optane
 	- Cổng xuất hình: 1 x HDMI; 1 x VGA/D-sub',
 	NULL, 17);
-INSERT INTO ProductCategory VALUES(19060270, 12110000);		
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19060270, 12110000);		
 	
 INSERT INTO Product VALUES(
 	19030232,
@@ -140,7 +140,7 @@ INSERT INTO Product VALUES(
 	- Cổng USB: 2 x USB 3.1 Gen 1
 	- Số quạt tặng kèm: 1 x 140 mm; 3 x 120mm LED',
 	NULL, 4);
-INSERT INTO ProductCategory VALUES(19030232, 12110000);		
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19030232, 12110000);		
 
 INSERT INTO Product VALUES(
 	19050521,
@@ -152,7 +152,7 @@ INSERT INTO Product VALUES(
 	- Cổng cắm lưu trữ: 4 x SATA 3 6Gb/s
 	- Cổng xuất hình: 1 x DVI-D; 1 x HDMI; 1 x VGA/D-sub',
 	NULL, 11);
-INSERT INTO ProductCategory VALUES(19050521, 12110000);		
+INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19050521, 12110000);		
 
 	
 

@@ -14,7 +14,6 @@ CREATE TABLE IF NOT EXISTS Product (
 CREATE TABLE IF NOT EXISTS Category (
 	CategoryID int(12) NOT NULL AUTO_INCREMENT,
 	CategoryName varchar(100) COLLATE utf8_unicode_ci NOT NULL,
-	CategoryDesc varchar(1000) COLLATE utf8_unicode_ci DEFAULT NULL,
 	CategoryImage varchar(100) DEFAULT NULL,
 	ParentCategory int(12) DEFAULT NULL, 
 	PRIMARY KEY(CategoryID),
@@ -22,14 +21,28 @@ CREATE TABLE IF NOT EXISTS Category (
 );
 
 CREATE TABLE IF NOT EXISTS ProductCategory(
+	ProCatID int(12) NOT NULL AUTO_INCREMENT,
 	ProductID int(12) NOT NULL, 
 	CategoryID int(12) NOT NULL, 
 	FOREIGN KEY(ProductID) REFERENCES Product(ProductID),
-	FOREIGN KEY(CategoryID) REFERENCES Category(CategoryID)
+	FOREIGN KEY(CategoryID) REFERENCES Category(CategoryID),
+	PRIMARY KEY(ProCatID),
+	UNIQUE(ProductID, CategoryID)
 );
+DELIMITER @@;
 
-CREATE TRIGGER `clean_procatmapping` BEFORE DELETE ON `product` FOR EACH ROW
-DELETE FROM
-  productcategory
-WHERE
-  ProductID = OLD.ProductID
+CREATE TRIGGER `clean_product` BEFORE DELETE ON `product` FOR EACH ROW
+DELETE FROM productcategory WHERE ProductID = OLD.ProductID;@@;
+  
+
+CREATE TRIGGER `clean_procatmapping2` BEFORE DELETE ON `category` FOR EACH ROW
+BEGIN
+	DELETE FROM
+	productcategory
+	WHERE
+	CategoryID = OLD.CategoryID;
+	UPDATE
+	category
+	SET parentcategory = NULL WHERE parentcategory = OLD.categoryID;
+END;@@;
+DELIMITER ;
