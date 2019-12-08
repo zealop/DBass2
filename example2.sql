@@ -75,9 +75,7 @@ CREATE TABLE Feedback (
 	Rate			INT		NOT NULL,
 	Review			VARCHAR(100) COLLATE utf8_unicode_ci,
 	CustomerID		int(12)	NOT NULL,
-	PRIMARY KEY		ReviewID, 
-	CONSTRAINT		fk_feed_cust_custdid	FOREIGN KEY (CustomerID)
-				REFERENCES Customer(CustomerID)
+	PRIMARY KEY		(ReviewID), 
 	CONSTRAINT		fk_feed_prod_prodid	FOREIGN KEY (ProductID)
 				REFERENCES Product(ProductID)
 				ON DELETE CASCADE
