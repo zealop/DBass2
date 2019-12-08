@@ -9,7 +9,7 @@ CREATE TABLE Product (
 	ProductImage	VARCHAR(100) DEFAULT NULL,
 	ProductStock	INT DEFAULT 0 CHECK(ProductStock >=0),
 	ProductReview	INT	DEFAULT 0,
-	ProductDiscount	DECIMAL(4,2) DEFAULT 0,
+	ProductDiscount	DECIMAL(12,2) DEFAULT 0 CHECK(ProductDiscount >=0),
 	PRIMARY KEY (ProductID)
 );
 
@@ -84,7 +84,7 @@ CREATE TABLE Feedback (
 CREATE TABLE Orders (
 	OrderID		int(12)		NOT NULL,
 	OrderStatus VARCHAR(50)	COLLATE utf8_unicode_ci NOT NULL,
-	OrderTotal	DECIMAL(10,2) NOT NULL,
+	OrderTotal	INT(12) NOT NULL,
 	CustomerID	int(12)	NOT NULL,
 	PRIMARY KEY	(OrderID)
 );
@@ -123,16 +123,14 @@ CREATE TABLE Customer (
 	Username	VARCHAR(20)	NOT NULL,
 	CPassword	VARCHAR(20) NOT NULL,
 	Email		VARCHAR(30)	NOT NULL,
-	PhoneNum	VARCHAR(15)	NOT NULL,
-	Country		VARCHAR(15)	COLLATE utf8_unicode_ci NOT NULL,
-	City		VARCHAR(15)	COLLATE utf8_unicode_ci NOT NULL,
-	Street		VARCHAR(15) COLLATE utf8_unicode_ci,
-	ApartmentNum	VARCHAR(10),
+	PhoneNum	int(12)	NOT NULL,
+	City		VARCHAR(50)	COLLATE utf8_unicode_ci NOT NULL,
+	Street		VARCHAR(50) COLLATE utf8_unicode_ci NOT NULL,
+	ApartmentNum	VARCHAR(15) COLLATE utf8_unicode_ci NOT NULL,
 	Fullname	VARCHAR(30)	COLLATE utf8_unicode_ci NOT NULL,
 	Birthdate	DATE		NOT NULL,
 	Sex			CHAR(1)		NOT NULL,
-	CustomerLevel	VARCHAR(10) COLLATE utf8_unicode_ci,
-	DischargeAmount		DECIMAL(10,2),
+	DischargeAmount		int(12),
 	PRIMARY KEY		(CustomerID)
 );
 

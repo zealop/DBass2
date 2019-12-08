@@ -16,8 +16,8 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <!-- personal -->
-	<script src="./init.js"></script>
 	<link rel="stylesheet" href="/DBass2/css/mycss.css">
+	<script src = "./init.js"></script>
 </head>
 
 <body>
@@ -187,62 +187,14 @@
   <main class="page-content">
     <div class="container-fluid">
             <h1>DBass2</h1>
-            <form method="post" action="">
-                <table class="table table-bordered data-table table-striped">
-                    <thead class="thead-dark">
-                        <th width="10%">ID</th>
-						<th width="20%">Name</th>
-						<th width="10%">Price</th>
-						<th width="8%">Stock</th>
-						<th width="auto">Description</th>
-						<th width="10%">Image</th>
-						<th width="10%">Discount</th>
-                    </thead>
-                    <tbody>
-                        <td>
-                            <input type="number" name="ID" id="id" class="form-control" required="">
-                        </td>
-                        <td>
-                            <input type="text" name="Name" id="name" class="form-control" required="">
-                        </td>
-                        <td>
-                            <input type="number" name="Price" id="price" class="form-control" required="">
-                        </td>
-						<td>
-                            <input type="number" name="Stock" id="stock" class="form-control" required="">
-                        </td>
-						<td>
-                            <input type="text" name="Description" id="desc" class="form-control" required="">
-                        </td>
-						<td>
-                            <input type="text" name="Image" id="img" class="form-control">
-                        </td>
-						<td>
-                            <input type="number" name="Discount" id="discount" class="form-control" value='0.00'>
-                        </td>
-                    </tbody>
-                </table>
-                <button type="submit" class="btn btn-success save-btn" name="add">Add</button>
-            </form>
-
             <table class="table table-bordered data-table table-striped" id="mytable">
                 <thead class="thead-dark">
-                    <th width="10%">ID</th>
-                    <th width="20%">Name</th>
-                    <th width="10%">Price</th>
-					<th width="1%">Stock</th>
-					<th width="auto">Description</th>
-					<th width="10%">Image</th>
-					<th width="10%">Discount</th>
-                    <th width="10%">Action</th>
+					<th>ID</th>
+					<th>Name</th>
+					<th>Level</th>
                 </thead>
                 <tbody id="mytbody"></tbody>
             </table>
-			<div>
-				<a href='./hot/'>Hot |</a>
-				<a href='./class/'>Class |</a>
-				<a href='./true/'>True Price</a>
-			</div>
         </div>
 
   </main>

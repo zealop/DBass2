@@ -188,38 +188,34 @@
     <div class="container-fluid">
             <h1>DBass2</h1>
             <form method="post" action="">
-                <table class="table table-bordered data-table table-striped">
-                    <thead class="thead-dark">
-                        <th width="10%">ID</th>
-						<th width="20%">Name</th>
-						<th width="10%">Price</th>
-						<th width="8%">Stock</th>
-						<th width="auto">Description</th>
-						<th width="10%">Image</th>
-						<th width="10%">Discount</th>
-                    </thead>
-                    <tbody>
-                        <td>
-                            <input type="number" name="ID" id="id" class="form-control" required="">
-                        </td>
-                        <td>
-                            <input type="text" name="Name" id="name" class="form-control" required="">
-                        </td>
-                        <td>
-                            <input type="number" name="Price" id="price" class="form-control" required="">
-                        </td>
-						<td>
-                            <input type="number" name="Stock" id="stock" class="form-control" required="">
-                        </td>
-						<td>
-                            <input type="text" name="Description" id="desc" class="form-control" required="">
-                        </td>
-						<td>
-                            <input type="text" name="Image" id="img" class="form-control">
-                        </td>
-						<td>
-                            <input type="number" name="Discount" id="discount" class="form-control" value='0.00'>
-                        </td>
+                        ID &#09;
+						<input type="number" name="ID" id="id" class="form-control" required=""><br>
+						Username &#09;
+						<input type="text" name="Username" id="username" class="form-control" required=""><br>
+						Password &#09; 
+						<input type="text" name="Password" id="desc" class="form-control" required=""><br>
+						Email &#09;
+						<input type="email" name="Email" id="email" class="form-control" required=""><br>
+						Phone &#09;
+						<input type="number" name="Phone" id="phone" class="form-control" required=""><br>
+						City &#09;
+						<input type="text" name="City" id="city" class="form-control" required=""><br>
+						Street &#09;
+						<input type="text" name="Street" id="street" class="form-control" required=""><br>
+						Apartment Number &#09;
+						<input type="text" name="ANo" id="ano" class="form-control" required=""><br>
+						Full Name &#09;
+						<input type="text" name="FName" id="fname" class="form-control" required=""><br>
+						Birthdate &#09;
+						<input type="date" name="BDay" id="bday" class="form-control" required=""><br>
+						Sex &#09;
+						<select name="Sex">
+							<option value="F">Female</option>
+							<option value="M">Male</option>
+						</select><br>
+						Discharge &#09;
+						<input type="number" name="Discharge" id="discharge" class="form-control" required=""><br>
+                           
                     </tbody>
                 </table>
                 <button type="submit" class="btn btn-success save-btn" name="add">Add</button>
@@ -227,22 +223,22 @@
 
             <table class="table table-bordered data-table table-striped" id="mytable">
                 <thead class="thead-dark">
-                    <th width="10%">ID</th>
-                    <th width="20%">Name</th>
-                    <th width="10%">Price</th>
-					<th width="1%">Stock</th>
-					<th width="auto">Description</th>
-					<th width="10%">Image</th>
-					<th width="10%">Discount</th>
-                    <th width="10%">Action</th>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Password</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>City</th>
+					<th>Street</th>
+					<th>ANo</th>
+					<th>FName</th>
+					<th>BDay</th>
+					<th>Sex</th>
+					<th>Discharge</th>
+                    <th>Action</th>
                 </thead>
                 <tbody id="mytbody"></tbody>
             </table>
-			<div>
-				<a href='./hot/'>Hot |</a>
-				<a href='./class/'>Class |</a>
-				<a href='./true/'>True Price</a>
-			</div>
         </div>
 
   </main>

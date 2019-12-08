@@ -143,22 +143,22 @@ INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductI
 	NULL, 11);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19050521, 12110000);		
 
-SET FOREIGN_KEY_CHECKS = 0;
+INSERT INTO Customer(CustomerID, Username, CPassword, Email, PhoneNum, City, Street, ApartmentNum, FullName, Birthdate, Sex, DischargeAmount)
+	VALUES (1, 'tphuong', '123456', 'fakeemail@gmail.com', 84909123456, 'Hồ Chí Minh', 'Lý Thường Kiệt', '156','Thái Tiểu Phương', '1999-10-22', 'M', 0); 
 INSERT INTO Feedback (ProductID, Rate, Review, CustomerID) VALUES(
-	19040596, 4, "xịn", 2);
+	19040596, 4, "xịn", 1);
 
 INSERT INTO Feedback (ProductID, Rate, Review, CustomerID) VALUES(
 	19040596, 2, "quá tệ", 1);
 	
 INSERT INTO Feedback (ProductID, Rate, Review, CustomerID) VALUES(
-	19040596, 3, "cũng được", 4);
+	19040596, 3, "cũng được", 1);
 
 INSERT INTO Feedback (ProductID, Rate, Review, CustomerID) VALUES(
-	19040602, 1, "lừa đảo", 5);
+	19040602, 1, "lừa đảo", 1);
 
 INSERT INTO Feedback (ProductID, Rate, Review, CustomerID) VALUES(
-	19040602, 5, "nhìn vui nhỉ", 6);
+	19040602, 5, "nhìn vui nhỉ", 1);
 	
 INSERT INTO Feedback (ProductID, Rate, Review, CustomerID) VALUES(
-	19050521, 4, "khá xấu", 11);
-SET FOREIGN_KEY_CHECKS = 1;
+	19050521, 4, "khá xấu", 1);
