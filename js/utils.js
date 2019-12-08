@@ -31,13 +31,19 @@
 
 
 $(document).ready(function() {	
+
     //Grab data from table
     $.get("./init.php", function(data, status) {
         var data_list = data;
         for (var i = 0; i < data_list.length; i++) {
 			var data = '<tr>';
-			for (var j=0; j < col.length;j++)
-				data += '<td>' + data_list[i][col[j]] + "</td>";
+			for (var j=0; j < col.length;j++){
+				if(String(data_list[i][col[j]]) == 'null')
+					temp = '';
+				else
+					temp = data_list[i][col[j]];
+				data += '<td>' + temp + "</td>";
+			}
 			data += '<td><button class="btn btn-info btn-xs btn-edit">Edit</button><button class="btn btn-danger btn-xs btn-delete">Delete</button></td></tr>';
             $("#mytbody").append(data);
         }
@@ -115,10 +121,11 @@ $(document).ready(function() {
     });
 
     //edit
+	var tmp =[];
     $("body").on("click", ".btn-edit", function() {
 		
-		$(this).parents("tr").find("td").not(':last').each(function(cellIndex) {
-			tmp[cellIndex]= $(this).html();
+		$(this).parents("tr").find("td").not(':last').each(function(cellIndex) {		
+			tmp[cellIndex] = $(this).html();
 			var headers = $(this).parents("table").find("th");
 			if($(headers[cellIndex]).html()!= 'ID')
 				$(this).attr('contenteditable', 'true');	

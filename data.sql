@@ -2,70 +2,59 @@ USE `examples`;
 INSERT INTO Category VALUES(
 	10000000,
 	'Linh kiện máy tính',
-	NULL,
 	NULL);
 	
 INSERT INTO Category VALUES(
 	11000000,
 	'Card màn hình',
-	NULL,
 	10000000);
 	
 INSERT INTO Category VALUES(
 	11100000,
 	'NVIDIA',
-	NULL,
 	11000000);
 	
 INSERT INTO Category VALUES(
 	11110000,
 	'RTX',
-	NULL,
 	11100000);
 	
 INSERT INTO Category VALUES(
 	11120000,
 	'GTX',
-	NULL,
 	11100000);
 	
 INSERT INTO Category VALUES(
 	12000000,
 	'Mainboard',
-	NULL,
 	10000000);	
 	
 INSERT INTO Category VALUES(
 	12100000,
 	'Intel',
-	NULL,
 	12000000);	
 	
 INSERT INTO Category VALUES(
 	12110000,
 	'LGA 1152',
-	NULL,
 	12100000);	
 	
 INSERT INTO Category VALUES(
 	13000000,
 	'Tản nhiệt',
-	NULL,
 	10000000);
 	
 INSERT INTO Category VALUES(
 	13100000,
 	'Tản nhiệt nước',
-	NULL,
 	13000000);
 	
 INSERT INTO Category VALUES(
 	14000000,
 	'Thùng máy',
-	NULL,
 	10000000);
 
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19040596,
 	'Card màn hình ASUS GeForce RTX 2080 8GB GDDR6 DUAL EVO OC (DUAL-RTX2080-O8G-EVO)',
 	22890000,
@@ -76,7 +65,7 @@ INSERT INTO Product VALUES(
 	NULL, 6);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040596, 11110000);
 
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19040602,
 	'Card màn hình ASUS GeForce GTX 1660Ti 6GB GDDR6 ROG Strix (ROG-STRIX-GTX1660TI-6G-GAMING)',
 	8970000,
@@ -87,7 +76,7 @@ INSERT INTO Product VALUES(
 	NULL, 12);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040602, 11120000);	
 	
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19040610,
 	'Card màn hình ASUS GeForce GTX 1650 4GB GDDR5 ROG Strix (ROG-STRIX-GTX1650-4G-GAMING)',
 	4860000,
@@ -98,7 +87,7 @@ INSERT INTO Product VALUES(
 	NULL, 22);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040610, 11120000);	
 	
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19040961,
 	'Mainboard ASUS P11C-X/AUDIO',
 	3990000,
@@ -110,7 +99,7 @@ INSERT INTO Product VALUES(
 	NULL, 11);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19040961, 12110000);		
 
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19041006,
 	'Tản nước AIO ASUS ROG RYUJIN 360',
 	7490000,
@@ -118,7 +107,7 @@ INSERT INTO Product VALUES(
 	NULL, 5);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19041006, 14000000);		
 
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19060270,
 	'Mainboard ASUS EX-B365M-V5',
 	1750000,
@@ -130,7 +119,7 @@ INSERT INTO Product VALUES(
 	NULL, 17);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19060270, 12110000);		
 	
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19030232,
 	'Case máy tính Asus TUF Gaming GT501',
 	4350000,
@@ -142,7 +131,7 @@ INSERT INTO Product VALUES(
 	NULL, 4);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19030232, 12110000);		
 
-INSERT INTO Product VALUES(
+INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductImage, ProductStock) VALUES(
 	19050521,
 	'Mainboard ASRock H310CM-HDV',
 	1439000,

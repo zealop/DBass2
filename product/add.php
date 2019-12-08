@@ -7,7 +7,7 @@
 	$stock= $_POST['Stock'];
 	$desc = $_POST['Description'];
 	$img = $_POST['Image'];
-	
+	$dis = $_POST['Discount'];
 	/*
 	//Perform check
 	if(!is_numeric($id) || $id <= 0 || $id != round($id, 0)){
@@ -24,8 +24,7 @@
 	}
 	*/
 	
-	$sql = "INSERT INTO product (productid, productname, productprice, productstock, productdesc, productimage) 
-	VALUES ('$id', '$name', '$price', '$stock', '$desc', '$img')";
+	$sql = "CALL add_product('$id', '$name', '$price', '$stock', '$desc', '$img', '$dis')";
 	
 	if (mysqli_query($connect, $sql)) {
 		echo "New record added";

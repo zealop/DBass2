@@ -3,7 +3,6 @@
 	
 	$id = $_POST['ID'];
 	$name = $_POST['Name'];
-	$img = $_POST['Image'];
 	$parent = $_POST['Parent'];
 	
 	/*input checking
@@ -27,7 +26,7 @@
 	}
 	*/
 	mysqli_query($connect, "SET FOREIGN_KEY_CHECKS =0");
-	$sql = "UPDATE category SET categoryname='$name', categoryimage='$img',
+	$sql = "UPDATE category SET categoryname='$name',
 parentcategory = '$parent' WHERE categoryid='$id'";
 	if (mysqli_query($connect, $sql)) {
 		echo "Record updated";

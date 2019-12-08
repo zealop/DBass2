@@ -16,8 +16,17 @@
     <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
     <!-- personal -->
-	<script src="./init.js"></script>
 	<link rel="stylesheet" href="/DBass2/css/mycss.css">
+	<script>
+	$(document).ready(function() {	
+		$.get("./detail.php", function(data, status) {
+			var data_list = data;
+			console.log(data);
+			$('#mytable').DataTable();
+			$('.dataTables_length').addClass('bs-select');
+		});
+	});
+	</script>
 </head>
 
 <body>
@@ -187,11 +196,11 @@
   <main class="page-content">
     <div class="container-fluid">
             <h1>DBass2</h1>
-            <form method="post" action="">
                 <table class="table table-bordered data-table table-striped">
                     <thead class="thead-dark">
                         <th>ID</th>
 						<th>Name</th>
+						<th>Image</th>
 						<th>Parent</th>
                     </thead>
                     <tbody>
@@ -202,6 +211,9 @@
                             <input type="text" name="Name" id="name" class="form-control" required="">
                         </td>
 						<td>
+                            <input type="text" name="Image" id="img" class="form-control">
+                        </td>
+						<td>
                             <input type="number" name="Parent" id="parent" class="form-control" required="">
                         </td>
 
@@ -209,20 +221,16 @@
                 </table>
                 <button type="submit" class="btn btn-success save-btn" name="add">Add</button>
             </form>
-
             <table class="table table-bordered data-table table-striped" id="mytable">
                 <thead class="thead-dark">
-                    <th>ID</th>
-					<th>Name</th>
-					<th>Parent</th>
-					<th>Action</th>
+                    <th>Category</th>
+					<th>Product</th>
                 </thead>
                 <tbody id="mytbody"></tbody>
             </table>
-			<div><a href='./detail/'>Details</a></div>
-    </div>
+        </div>
 
-</main>
+  </main>
   <!-- page-content" -->
 </div>
 <!-- page-wrapper -->

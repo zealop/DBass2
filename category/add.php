@@ -3,7 +3,6 @@
 	
 	$id = $_POST['ID'];
 	$name = $_POST['Name'];;
-	$img = $_POST['Image'];
 	$parent = $_POST['Parent'];
 	
 	/*
@@ -22,8 +21,8 @@
 	}
 	*/
 	
-	$sql = "INSERT INTO category (categoryid, categoryname, categoryimage, parentcategory) 
-	VALUES ('$id', '$name', '$img', '$parent')";
+	$sql = "INSERT INTO category (categoryid, categoryname, parentcategory) 
+	VALUES ('$id', '$name', '$parent')";
 	
 	if (mysqli_query($connect, $sql)) {
 		echo "New record added";
