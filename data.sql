@@ -143,5 +143,5 @@ INSERT INTO Product (ProductID, ProductName, ProductPrice, ProductDesc, ProductI
 	NULL, 11);
 INSERT INTO ProductCategory (ProductID, CategoryID) VALUES(19050521, 12110000);		
 
-	
+INSERT INTO Feedback (ReviewID, ProductID, Rate, Review, CostumerID
 

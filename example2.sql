@@ -70,7 +70,7 @@ CREATE TABLE Ship (
 );
 
 CREATE TABLE Feedback (
-	ReviewID	int(12)		NOT NULL,
+	ReviewID	int(12)		NOT NULL AUTO_INCREMENT,
 	ProductID	int(12)		NOT NULL,
 	Rate			INT		NOT NULL,
 	Review			VARCHAR(100) COLLATE utf8_unicode_ci,
